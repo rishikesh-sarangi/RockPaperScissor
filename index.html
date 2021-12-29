@@ -231,22 +231,23 @@
         margin-bottom: 60px;
       }
       .score {
-        position: absolute;
-        top: 0;
-        right: 5rem;
-      }
-      .score-human {
-        top: 5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
       .score-comp,
       .score-human {
-        margin-top: 20px;
         background-color: #fff;
         padding: 10px;
         border-radius: 8px;
         width: 150px;
         border: 3px solid black;
         box-shadow: 5px 5px black;
+        margin-bottom: 20px;
+        display: inline-block;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-bottom: 60px;
       }
       footer a {
         font-family: monospace;
@@ -291,6 +292,10 @@
     </div>
     <div class="the-game-2">
       <h3 id="result-html">Hello !</h3>
+      <div class="scoreboard">
+        <h3 class="score score-comp">Computer:</h3>
+        <h3 class="score score-human">Human:</h3>
+      </div>
       <h2>Computer's Choice:</h2>
 
       <img src="rock.png" class="computer com-rock" width="150" height="150" />
@@ -306,10 +311,6 @@
         width="150"
         height="150"
       />
-    </div>
-    <div class="scoreboard">
-      <h3 class="score score-comp">Computer:</h3>
-      <h3 class="score score-human">Human:</h3>
     </div>
     <footer>
       <h3>
