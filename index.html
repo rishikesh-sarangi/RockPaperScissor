@@ -134,14 +134,27 @@
     </script>
 
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
       body {
         background-color: rgb(149, 143, 231);
         font-family: Arial, Helvetica, sans-serif;
         position: relative;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
       }
       .the-game,
       .the-game-2 {
+        margin-top: 20px;
         text-align: center;
+      }
+      .score,
+      .score-human {
+        margin-top: 20px;
       }
       .the-game-2 {
         margin-top: 60px;
@@ -172,6 +185,16 @@
       .score-human {
         top: 5rem;
       }
+      footer h3 {
+        text-align: center;
+        letter-spacing: 1px;
+      }
+      footer {
+        background-color: rgb(129, 194, 178);
+        margin-top: auto;
+        padding: 4px;
+        border-top: 3px solid black;
+      }
     </style>
     <title>Rock Paper Scissor</title>
   </head>
@@ -183,7 +206,7 @@
       <img src="scissor.png" class="choice scissor" width="150" height="150" />
     </div>
     <div class="the-game-2">
-      <h3 id="result-html">Hello</h3>
+      <h3 id="result-html">Hello !</h3>
       <h2>Computer's Choice:</h2>
       <img src="rock.png" class="computer com-rock" width="150" height="150" />
       <img
@@ -201,5 +224,8 @@
     </div>
     <h3 class="score score-comp">Computer:</h3>
     <h3 class="score score-human">Human:</h3>
+    <footer>
+      <h3>Made By Rishikesh Sarangi</h3>
+    </footer>
   </body>
 </html>
