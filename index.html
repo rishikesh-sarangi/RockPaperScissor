@@ -50,7 +50,7 @@
           if (result === 2) {
             clr();
             $("#result-html")
-              .html("You Lost!")
+              .html("You Lose!")
               .css("background-color", "rgb(230, 37, 69)");
             $(".score-comp").html("Computer:            " + c);
           }
@@ -60,7 +60,7 @@
           if (result === 0) {
             clr();
             $("#result-html")
-              .html("Tie !")
+              .html("Draw !")
               .css("background-color", "rgb(150, 150, 144)");
           }
           if (result === 1) {
@@ -245,7 +245,8 @@
         padding: 10px;
         border-radius: 8px;
         width: 150px;
-        border: 2px solid black;
+        border: 3px solid black;
+        box-shadow: 5px 5px black;
       }
       footer a {
         font-family: monospace;
