@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $(".rock").click(function () {
+          var result = compare("rock", bot());
+          if (result === 0) {
+            $("#result-html").html("Tie !");
+          }
+          if (result === 1) {
+            $("#result-html").html("You Lost!");
+
+            $(".score-comp").html("Computer:" + c);
+          }
+          if (result === 2) {
+            $("#result-html").html("You Won!");
+
+            $(".score-human").html("Human:" + h);
+          }
+        });
+        $(".paper").click(function () {
+          var result = compare("paper", bot());
+          if (result === 0) {
+            $("#result-html").html("Tie !");
+          }
+          if (result === 1) {
+            $("#result-html").html("You Win!");
+            $(".score-human").html("Human:" + h);
+          }
+          if (result === 2) {
+            $("#result-html").html("You Lost!");
+            $(".score-comp").html("Computer:" + c);
+          }
+        });
+        $(".scissor").click(function () {
+          var result = compare("scissor", bot());
+          if (result === 0) {
+            $("#result-html").html("Tie !");
+          }
+          if (result === 1) {
+            $("#result-html").html("You Win!");
+            $(".score-human").html("Human:" + h);
+          }
+          if (result === 2) {
+            $("#result-html").html("You Lost!");
+            $(".score-comp").html("Computer:" + c);
+          }
+        });
+        var bot = function () {
+          var random = Math.floor(Math.random() * 30 + 1);
+          if (random < 10) {
+            return "rock";
+          } else if (random < 20) {
+            return "paper";
+          } else if (random < 30) {
+            return "scissor";
+          }
+        };
+        let c = 0;
+        let h = 0;
+        var rock = function () {
+          $(".com-rock").css("display", "inline-block");
+          $(".com-paper").css("display", "none");
+          $(".com-scissor").css("display", "none");
+          // $(".com-rock").show();
+          // $(".com-rock").fadeOut(2000);
+        };
+        var paper = function () {
+          $(".com-rock").css("display", "none");
+          $(".com-paper").css("display", "inline-block");
+          $(".com-scissor").css("display", "none");
+          // $(".com-paper").show();
+          // $(".com-paper").fadeOut(2000);
+        };
+        var scissor = function () {
+          $(".com-rock").css("display", "none");
+          $(".com-paper").css("display", "none");
+          $(".com-scissor").css("display", "inline-block");
+          // $(".com-scissor").show();
+          // $(".com-scissor").fadeOut(2000);
+        };
+
+        var compare = function (me, opponent) {
+          if (me === "rock") {
+            if (opponent === "rock") {
+              rock();
+              return 0;
+            } else if (opponent === "paper") {
+              paper();
+              c++;
+              return 1;
+            } else if (opponent === "scissor") {
+              scissor();
+              h++;
+              return 2;
+            }
+          } else if (me === "paper") {
+            if (opponent === "paper") {
+              paper();
+              return 0;
+            } else if (opponent === "rock") {
+              rock();
+              h++;
+              return 1;
+            } else if (opponent === "scissor") {
+              scissor();
+              c++;
+              return 2;
+            }
+          } else if (me === "scissor") {
+            if (opponent === "scissor") {
+              scissor();
+              return 0;
+            } else if (opponent === "paper") {
+              paper();
+              h++;
+              return 1;
+            } else if (opponent === "rock") {
+              rock();
+              c++;
+              return 2;
+            }
+          } else {
+            return "Error";
+          }
+        };
+      });
+    </script>
+
+    <style>
+      body {
+        background-color: rgb(149, 143, 231);
+        font-family: Arial, Helvetica, sans-serif;
+        position: relative;
+      }
+      .the-game,
+      .the-game-2 {
+        text-align: center;
+      }
+      .the-game-2 {
+        margin-top: 60px;
+      }
+      .choice {
+        opacity: 0.6;
+      }
+      .choice:hover {
+        opacity: 1;
+
+        cursor: pointer;
+      }
+      .computer {
+        display: none;
+      }
+      .comp {
+        display: inline-block;
+      }
+      #result-html {
+        margin-bottom: 60px;
+      }
+
+      .score {
+        position: absolute;
+        top: 0;
+        right: 5rem;
+      }
+      .score-human {
+        top: 5rem;
+      }
+    </style>
+    <title>Rock Paper Scissor</title>
+  </head>
+  <body>
+    <div class="the-game">
+      <h2>Your Choice:</h2>
+      <img src="rock.png" class="choice rock" width="150" height="150" />
+      <img src="paper.png" class="choice paper" width="150" height="150" />
+      <img src="scissor.png" class="choice scissor" width="150" height="150" />
+    </div>
+    <div class="the-game-2">
+      <h3 id="result-html">Hello</h3>
+      <h2>Computer's Choice:</h2>
+      <img src="rock.png" class="computer com-rock" width="150" height="150" />
+      <img
+        src="paper.png"
+        class="computer com-paper"
+        width="150"
+        height="150"
+      />
+      <img
+        src="scissor.png"
+        class="computer com-scissor"
+        width="150"
+        height="150"
+      />
+    </div>
+    <h3 class="score score-comp">Computer:</h3>
+    <h3 class="score score-human">Human:</h3>
+  </body>
+</html>
