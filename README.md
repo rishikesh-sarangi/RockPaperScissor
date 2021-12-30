@@ -1,2 +1,2 @@
 # RockPaperScissor
-RockPaperScissor using Jquery
+RockPaperScissor using jQuery
