@@ -1,4 +1,4 @@
 # RockPaperScissor
 RockPaperScissor using jQuery
 
-Link - https://kasino789.github.io/RockPaperScissor/
+Link - https://rishikesh-sarangi.github.io/RockPaperScissor
